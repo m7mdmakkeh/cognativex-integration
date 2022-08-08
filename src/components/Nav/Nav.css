@@ -1,0 +1,36 @@
+
+.nav-container{
+    margin: 2rem auto 2rem auto;
+    padding: 0 4rem;
+    background-color: var(--primary-color);
+    border-radius: 90px;
+}
+
+.nav-container ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.nav-container li{
+    cursor: pointer;
+    padding: 1rem 0;
+}
+.nav-container li a{
+    transition: .5s;
+}
+.nav-container li.active{
+    border-bottom: 2px solid var(--accent);
+}
+.nav-container li.active a{
+    color: var(--accent);
+}
+
+.nav-container a{
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+
+

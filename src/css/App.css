@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Poppins:wght@400;500;700&display=swap');
+
+:root{
+    --primary-color: #1e1e2f;
+    --accent: #55C0F0;
+    --off-white: #f7f7f7;
+
+    --shadow-color: rgba(2, 2 ,2, .1);
+    --card-background-gray: #EDEDF1;
+
+    --typography-primary: var(--primary-color);
+    --typography-secondary: #646464;
+    --typography-muted: #a7a7a7;
+}
+
+.App{
+    padding: 2rem;
+    font: 18px 'Poppins';
+    background-color: var(--off-white);
+    min-height: 100vh;
+}
+
+.mg-auto{
+    width: fit-content;
+    margin-inline: auto;
+}
+
+section.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
