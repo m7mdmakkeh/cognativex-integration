@@ -23,6 +23,7 @@ const MetaDataChecker = () => {
             case "NOT_FOUND": msg = "CognativeX Meta Data Not Found"; icon=errorIcon; break;
         }
         data = data.data;
+        console.log(data.thumb)
         return (
             <>
             <div className="statusDisplay">
