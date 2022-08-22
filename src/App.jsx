@@ -13,8 +13,8 @@ function App() {
       <Nav />
       <section className="container">
         <Routes>
-          <Route path='/integration/metadatachecker' element= { <MetaDataChecker /> } />
-          <Route path='/integration' element= { <IntegrationDocs /> } />
+          <Route path='./metadatachecker' element= { <MetaDataChecker /> } />
+          <Route path='./' element= { <IntegrationDocs /> } />
           {/* <Route path='/JoinUs' element= { <JoinUs /> } />
           <Route path='/AboutUs' element= { <AboutUs /> } />
           <Route path='/ContactUs' element= { <ContactUs /> } /> */}
