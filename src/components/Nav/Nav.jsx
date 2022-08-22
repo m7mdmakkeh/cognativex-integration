@@ -9,8 +9,8 @@ const Nav = () => {
     return (
         <div className='mg-auto nav-container'>
             <ul>
-                <CustomLink to="/"> Integration Docs </CustomLink>
-                <CustomLink to="metadatachecker"> MetaData Checker </CustomLink>
+                <CustomLink to="/integration"> Integration Docs </CustomLink>
+                <CustomLink to="/integration/metadatachecker"> MetaData Checker </CustomLink>
                 {/* <CustomLink to="/joinus"> Join Us </CustomLink> */}
                 {/* <CustomLink to="/aboutus"> About Us </CustomLink> */}
                 {/* <CustomLink to="/contactus"> Contact Us </CustomLink> */}
