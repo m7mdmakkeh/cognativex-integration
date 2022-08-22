@@ -1,10 +1,12 @@
 import React from 'react';
+import './IntegrationDocs.css'
 
 const IntegrationDocs = () => {
     return (
         <div>
-            Integration Docs
+            <iframe src="https://cognativex.com/integration" className='integrationIframe' frameborder="0"></iframe>
         </div>
+        
     );
 }
 

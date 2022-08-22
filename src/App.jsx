@@ -13,11 +13,11 @@ function App() {
       <Nav />
       <section className="container">
         <Routes>
-          <Route path='/metadatachecker' element= { <MetaDataChecker /> } />
-          <Route path='/IntegrationDocs' element= { <IntegrationDocs /> } />
-          <Route path='/JoinUs' element= { <JoinUs /> } />
+          <Route active path='/metadatachecker' element= { <MetaDataChecker /> } />
+          <Route path='/' element= { <IntegrationDocs /> } />
+          {/* <Route path='/JoinUs' element= { <JoinUs /> } />
           <Route path='/AboutUs' element= { <AboutUs /> } />
-          <Route path='/ContactUs' element= { <ContactUs /> } />
+          <Route path='/ContactUs' element= { <ContactUs /> } /> */}
         </Routes>
       </section>  
 

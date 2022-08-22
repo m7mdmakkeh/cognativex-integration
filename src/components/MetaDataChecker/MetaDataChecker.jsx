@@ -22,8 +22,7 @@ const MetaDataChecker = () => {
             case "EXCEPTION": msg = "Link Invalid"; icon=errorIcon; break;
             case "NOT_FOUND": msg = "CognativeX Meta Data Not Found"; icon=errorIcon; break;
         }
-        data = data.data;
-        console.log(data.thumb)
+        data = data?.data;
         return (
             <>
             <div className="statusDisplay">
@@ -68,10 +67,19 @@ const MetaDataChecker = () => {
     }
 
     const checkUrl  = async () => {
-        setIsChecking(true);
-        const res = await crawlJsonLd(inputRef.current.value);
-        if (res && res.data) setUrlCrawledData(res.data);
-        setIsChecking(false);
+        let url = inputRef.current.value;
+        if(url == ''){
+            inputRef.current.placeholder = "Please enter a URL";
+            setTimeout(() => {
+                inputRef.current.placeholder = "";
+            }, 3000);
+        }
+        else{
+            setIsChecking(true);
+            const res = await crawlJsonLd(url);
+            if (res && res.data) setUrlCrawledData(res.data);
+            setIsChecking(false);
+        }
     }
 
 

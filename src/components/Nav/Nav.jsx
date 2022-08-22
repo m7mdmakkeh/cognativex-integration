@@ -1,31 +1,21 @@
 import React from 'react';
 import '../../css/App.css'
 import './Nav.css'
-import { useState, useEffect } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 
 const Nav = () => {
-
-    const [activePage, setActivePage] = useState("MetaData Checker")
-
-
-    function setAsActive({target}){
-        setActivePage(target.innerText);
-        target.classList.add('active')
-    }
-
     
     return (
         <div className='mg-auto nav-container'>
             <ul>
+                <CustomLink to="/"> Integration Docs </CustomLink>
                 <CustomLink to="/metadatachecker"> MetaData Checker </CustomLink>
-                <CustomLink to="/integrationdocs"> Integration Docs </CustomLink>
-                <CustomLink to="/joinus"> Join Us </CustomLink>
-                <CustomLink to="/aboutus"> About Us </CustomLink>
-                <CustomLink to="/contactus"> Contact Us </CustomLink>
+                {/* <CustomLink to="/joinus"> Join Us </CustomLink> */}
+                {/* <CustomLink to="/aboutus"> About Us </CustomLink> */}
+                {/* <CustomLink to="/contactus"> Contact Us </CustomLink> */}
                
-                <span className="movingActiveLine"></span>
+                {/* <span className="movingActiveLine"></span> */}
             </ul>
         </div>
     );
