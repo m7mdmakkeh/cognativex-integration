@@ -1,0 +1,11 @@
+.cx-select-native{
+    background-color: transparent;
+    padding: .2rem;
+    min-width: 100px;
+    color: rgb(215, 220, 228);
+    border-radius: 5px;
+}
+
+.cx-select-native option{
+    color: black;
+}
