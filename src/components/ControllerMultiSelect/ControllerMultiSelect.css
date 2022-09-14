@@ -1,0 +1,157 @@
+:root{
+  --gray: rgb(172, 169, 169);
+  --dark-gray: #28283d;
+  --cx-multi-select-padding: .5rem 1rem;
+  --cx-multi-select-padding-option: .5rem 1rem 0.5rem 2rem;
+}
+
+.cx-multi-select{
+  user-select: none;
+  position: relative;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.cx-multi-select-open.cx-multi-select{
+  box-shadow: 0 4px 8px 0 #3333;
+}
+
+
+.cx-multi-select__trigger{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-gray);
+  border-radius: 5px;
+  padding: var(--cx-multi-select-padding);
+  color: white;
+  cursor: pointer;
+  width:100%;
+}
+.cx-multi-select-open .cx-multi-select__trigger{
+  border-radius: 5px 5px 0 0;
+  color: var(--dark-gray);
+  background-color: white;
+} 
+.cx-multi-select__placeholder{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cx-multi-select__trigger::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  background-color: var(--gray);
+  display: block;
+  margin-inline:auto;
+  height: 1px; 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cx-multi-select-open .cx-multi-select__trigger::after{
+  transition: .5s;
+  width: 90%;
+}
+
+.cx-multi-select__arrow{
+  position: relative;
+  height: 8px;
+  transform-origin: center;
+  width: 6px;
+}
+
+.cx-multi-select__arrow::after,
+.cx-multi-select__arrow::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  border-radius: 50px;
+  transition: .45s;
+  background-color: white;
+}
+.cx-multi-select__arrow::after{
+  left: 0;
+  transform: rotate(-40deg);
+}
+.cx-multi-select__arrow::before{
+  right: 0;
+  transform: rotate(40deg);
+}
+
+.cx-multi-select-open .cx-multi-select__arrow::after{
+  transform: rotate(40deg);
+  background-color: var(--dark-gray);
+}
+.cx-multi-select-open .cx-multi-select__arrow::before{
+  background-color: var(--dark-gray);
+  transform: rotate(-40deg);
+}
+
+.cx-multi-select__options{
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  z-index: 2000;
+}
+
+.cx-multi-select__options::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+}
+.cx-multi-select__options::-webkit-scrollbar-track{
+  background-color: white;
+}
+.cx-multi-select__options::-webkit-scrollbar-thumb{
+  background-color: var(--gray);
+  border-radius: 5px;
+}
+.cx-multi-select__options::-webkit-scrollbar-thumb:hover{
+  background-color: var(--dark-gray);
+}
+.cx-multi-select__options::-webkit-scrollbar-corner{
+  background-color: white;
+}
+
+.cx-multi-select__option{
+  list-style-type: none;
+  padding: var(--cx-multi-select-padding-option);
+  cursor: pointer;
+  width: 100%;
+  color: var(--dark-gray);
+  background-color: white;
+  transform: translateY(calc(-70px * var(--i)));
+  opacity: 0;
+  animation: cx-multi-select-slide-option-in .5s forwards;
+}
+.cx-multi-select__option:hover{
+  background-color: var(--dark-gray);
+  color: white;
+}
+.cx-multi-select__option:last-of-type{
+  border-radius: 0 0 5px 5px;
+}
+.cx-multi-select__active-option{
+  position: relative;
+}
+.cx-multi-select__active-option::after{
+  position: absolute;
+  content: "\2713";
+  right: 87%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@keyframes cx-multi-select-slide-option-in {
+  to{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+

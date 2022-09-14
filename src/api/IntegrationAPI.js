@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const CRAWLER_URL = 'https://crawler.cognativex.com/api/';
+const CRAWLER_URL = 'https://common-cxcrawler-zakpngxo5a-ew.a.run.app/api/';
+
 
 
 const crawlJsonLd = async (url) => {
