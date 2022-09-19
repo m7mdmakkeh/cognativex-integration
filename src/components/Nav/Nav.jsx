@@ -12,11 +12,8 @@ const Nav = () => {
                 <CustomLink to="/integration/select"> Select </CustomLink>
                 <CustomLink to="/integration/controller"> Controller </CustomLink>
                 <CustomLink to="/integration/multiSelect"> MultiSelect </CustomLink>
-                {/* <CustomLink to="/joinus"> Join Us </CustomLink> */}
-                {/* <CustomLink to="/aboutus"> About Us </CustomLink> */}
-                {/* <CustomLink to="/contactus"> Contact Us </CustomLink> */}
-               
-                {/* <span className="movingActiveLine"></span> */}
+                <CustomLink to="/integration/SelectWPills"> SelectWPills </CustomLink>
+                <CustomLink to="/integration/SegmentCard"> SegmentCard </CustomLink>
             </ul>
         </div>
     );

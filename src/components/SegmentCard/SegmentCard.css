@@ -1,0 +1,45 @@
+:root{
+    --segment-card-top-padding: 1rem;
+    --segment-card-right-padding: 1.5rem;
+}
+
+.segment-card-container{
+    padding: 1rem 1.5rem .2rem 1.5rem;
+    width: 350px;
+    background-color: #1e1e2f;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 #00000040;
+    position: relative;
+}
+
+.segment-card-container__title{
+    font: 1.8rem "poppins";
+    padding-right: 1rem;
+}
+.segment-card-container__status{
+    position: absolute;
+    top: 1.4rem;
+    right: var(--segment-card-right-padding);
+    width: 15px;
+    height: 15px;
+    background-color: limegreen;
+    border-radius: 50%;
+}
+
+.segment-card-container__dimensions{
+    color: #adadb8;
+}
+
+.segment-card-container__users{
+    color: #adadb8;
+    text-align: right;
+}
+
+.segment-card-container__users span{
+    color: #21c8df;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 80px;
+}
+

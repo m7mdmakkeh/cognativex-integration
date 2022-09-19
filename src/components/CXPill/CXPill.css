@@ -1,0 +1,21 @@
+
+.cx-pill{
+  border-radius: 999px;
+  background: linear-gradient(to right, #ef535c, #8e3ccc);
+  color: white;
+  padding: .2rem .8rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  cursor: default;
+}
+
+.cx-pill i{
+  padding-top: .15rem;
+  opacity: .6;
+  display: none;
+  cursor: pointer;
+}
+.cx-pill:hover i{
+  display: inline;
+}

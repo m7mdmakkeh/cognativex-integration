@@ -1,0 +1,125 @@
+input:focus{
+    outline: none;
+}
+
+.cx-btn{
+    background-color: #4b4c6e;
+    padding: .35rem .5rem;
+    color: white;
+    border: none;
+    box-shadow: 0 1px 2px 0 #0002;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
+    user-select: none;
+  }
+  .cx-btn:focus{
+    outline:none;
+  }
+  .cx-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px 0 #0002;
+  }
+
+.cx-select-w-pills-container{
+    display: flex;
+    align-items: flex-start;
+    color: whitesmoke;
+}
+
+.cx-select-w-pills__pillsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: .5rem;
+    flex-grow: 1;
+    width: 200px;
+}
+
+.cx-select-w-pills__selectContainer{
+    position: relative;
+}
+
+.cx-select-w-pills__selectContainer__trigger{
+    background-color: #454c61;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: .3s;
+}
+.cx-select-w-pills__selectContainer__trigger:hover{
+    transform: none;
+}
+.cx-select-w-pills__selectContainer__trigger:hover > i{
+    color: #55c0f0;
+}
+.cx-select-w-pills__selectContainer__trigger > i{
+    font-size: 1.3rem;
+    color: whitesmoke;
+    transition: .5s;
+}
+.cx-select-w-pills-open .cx-select-w-pills__selectContainer__trigger > i{
+    transform: rotate(45deg);
+}
+
+
+.cx-select-w-pills__selectContainer__popup{
+    position: absolute;
+    z-index: 4000;
+    top: 135%;
+    background-color: #454c61;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 #0004;
+    left: 50%;
+    translate: -50% -10px;
+    opacity: 0;
+    animation: slide-popup-select-in .5s forwards;
+    width:fit-content;
+    min-width: 180px;
+}
+.cx-select-w-pills__selectContainer__popup ul::-webkit-scrollbar{
+    display: none;
+}
+.cx-select-w-pills__selectContainer__popup ul{
+    margin-top: 60px;
+    max-height: 250px;
+    overflow: auto;
+    list-style-type: none;
+}
+.cx-select-w-pills__selectContainer__popup .fa-caret-up{
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    translate: -50% 0;
+    color: #454c61;
+    font-size: 2rem;
+}
+.cx-select-w-pills__selectContainer__popup ul li{
+    padding: .5rem 1rem;
+    transition: .5s;
+    cursor: pointer;
+}
+.cx-select-w-pills__selectContainer__popup ul li:hover{
+    background-color: #575d6c;
+}
+.cx-select-w-pills__selectContainer__popup > input{
+    font-size: 1rem;
+    color: rgb(207, 207, 207);
+    background-color: transparent;
+    padding: .3rem .45rem;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    position: fixed;
+    inset: 1rem 1rem auto 1rem;
+    margin-bottom: 1rem;
+}
+
+@keyframes slide-popup-select-in {
+    to{
+        opacity: 1;
+        translate: -50% 0;
+    }
+}
+
+
