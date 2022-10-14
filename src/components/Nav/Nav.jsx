@@ -13,7 +13,7 @@ const Nav = () => {
                 <CustomLink to="/integration/controller"> Controller </CustomLink>
                 <CustomLink to="/integration/multiSelect"> MultiSelect </CustomLink>
                 <CustomLink to="/integration/SelectWPills"> SelectWPills </CustomLink>
-                <CustomLink to="/integration/SegmentCard"> SegmentCard </CustomLink>
+                <CustomLink to="/integration/AdvancedSelect"> Advanced Select </CustomLink>
             </ul>
         </div>
     );

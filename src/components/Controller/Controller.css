@@ -45,7 +45,7 @@
     transform: translateX(-50%);
 }
 
-.open .cx-select__trigger::after{
+.cx-select-open .cx-select__trigger::after{
     transition: .5s;
     width: 90%;
 }
