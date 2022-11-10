@@ -14,6 +14,7 @@ const Nav = () => {
                 <CustomLink to="/integration/multiSelect"> MultiSelect </CustomLink>
                 <CustomLink to="/integration/SelectWPills"> SelectWPills </CustomLink>
                 <CustomLink to="/integration/AdvancedSelect"> Advanced Select </CustomLink>
+                <CustomLink to="/integration/TreeSelect"> Tree Select </CustomLink>
             </ul>
         </div>
     );

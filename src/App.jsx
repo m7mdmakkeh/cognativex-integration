@@ -2,7 +2,7 @@ import './css/App.css'
 import Nav from './components/Nav/Nav'
 import logo from './assets/logo.svg'
 import { Routes, Route } from 'react-router-dom'
-import { Select, Controller, ControllerMultiSelect, SelectWPills, AdvancedSelect } from './components'
+import { Select, Controller, ControllerMultiSelect, SelectWPills, AdvancedSelect, TreeSelect } from './components'
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route active path='/integration/multiSelect' element= { <ControllerMultiSelect /> } />
           <Route active path='/integration/SelectWPills' element= { <SelectWPills /> } />
           <Route active path='/integration/AdvancedSelect' element= { <AdvancedSelect /> } />
+          <Route active path='/integration/TreeSelect' element= { <TreeSelect /> } />
         </Routes>
       </section>  
 
