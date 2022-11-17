@@ -7,7 +7,6 @@ import './MetaDataChecker.css'
 import check from '../../assets/check.svg'
 import times from '../../assets/times.svg'
 import errorIcon from '../../assets/errorIcon.svg'
-
 const MetaDataChecker = () => {
 
     const inputRef = useRef(null);
@@ -17,12 +16,15 @@ const MetaDataChecker = () => {
     const displayResults = (data) => {
         if(!data) return;
         let msg="Unknown Status", icon=errorIcon;
-        switch (data.status){
+        let status = typeof data === 'string' ? "ERROR" : (typeof data === 'object' && data.errors.length > 0) ? "MISTAKES" : "OK";
+        switch (status){
             case "OK": msg = "Valid MetaData"; icon=check; break;
-            case "EXCEPTION": msg = "Link Invalid"; icon=errorIcon; break;
-            case "NOT_FOUND": msg = "CognativeX Meta Data Not Found"; icon=errorIcon; break;
+            case "ERROR": msg = data; icon=errorIcon; break;
+            case "MISTAKES": msg = "You have some mistakes in the JSON format"; icon=errorIcon; break;
         }
-        fields = data?.fields;
+        const fields = data?.fieldsInfo;
+        const errors = data?.errors;
+        console.log(data?.fieldsInfo)
         return (
             <>
             <div className="statusDisplay">
@@ -30,28 +32,45 @@ const MetaDataChecker = () => {
                 <img className="statusIcon" src={icon}/>
             </div>
             {
-                fields? (<div className='table'>
+                fields?.length && status==="OK" && (<div className='table'>
                             <div className="row">
                                 <div className="label">Type</div>
-                                <div className="data-value">{fields.postType}</div>
+                                <div className="data-value">{fields.type || 'No Type'}</div>
                             </div>
                             <hr />
                             <div className="row">
                                 <div className="label">Title</div>
-                                <div className="data-value">{fields.title}</div>
+                                <div className="data-value">{fields.title || 'No Title'}</div>
                             </div>
                             <hr />
                             <div className="row">
                                 <div className="label">Image</div>
-                                <img className="data-value" src={fields.thumb} alt="image of the post"/>
+                                <img className="data-value" src={fields.thumbnail || 'No image'} alt="image of the post not"/>
                             </div>
                             <hr />
                             <div className="row">
                                 <div className="label">Published Date</div>
-                                <div className="data-value">{formatDate(fields.datePublished)} (GMT)</div>
+                                <div className="data-value">{formatDate(fields.published_time)} (GMT)</div>
                             </div>
+                            
                         </div>)
-                    : ""
+            }
+            {
+                errors?.length && (
+                    <div className='error-container'>
+                        {
+                            errors.map(e => 
+                            <div className="error-item">
+                                <div className="error-item__problem">
+                                    Error At Position <span>{e.location}</span>: <span>{e.title}</span> 
+                                </div>
+                                <div className="error-item__solution">{e.solution}</div>
+                            </div>)
+                        }
+                        
+                    </div>
+
+                )
             }
             
             </>
@@ -68,11 +87,11 @@ const MetaDataChecker = () => {
 
     const checkUrl  = async () => {
         let url = inputRef.current.value;
-        if(url == ''){
+        if(url === ''){
             inputRef.current.placeholder = "Please enter a URL";
             setTimeout(() => {
                 inputRef.current.placeholder = "";
-            }, 3000);
+            }, 6000);
         }
         else{
             setIsChecking(true);

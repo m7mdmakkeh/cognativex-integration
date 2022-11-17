@@ -62,7 +62,7 @@
 
 
 .resultsContainer{
-    width: var(--viewedWidth);
+    width: clamp(450px, 40%, 80%);
     margin-inline: auto;
     margin-top: 2.2rem;
 }
@@ -110,8 +110,6 @@
     max-height: 200px;
 }
 
-
-
 .statusDisplay{
     display: flex;
     gap:.4rem;
@@ -119,4 +117,36 @@
     justify-content: center;
     margin-bottom: .8rem;
 }
+
+
+
+
+.error-container{
+    
+}
+
+.error-item{
+    background-color: rgb(255 177 177);
+    color: darkred;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px 0 #1113;
+    margin-bottom: 1rem;
+}
+.error-item__problem{
+    background-color: darkred;
+    padding: .6rem 1.8rem;
+    color: rgb(255 177 177);
+}
+.error-item__problem > span:nth-of-type(1){
+    font-weight: bold;
+}
+.error-item__solution{
+    padding: .6rem 1.8rem;
+}
+
+
+
+
+
 
