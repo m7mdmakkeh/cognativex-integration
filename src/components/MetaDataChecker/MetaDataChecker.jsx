@@ -22,7 +22,7 @@ const MetaDataChecker = () => {
             case "EXCEPTION": msg = "Link Invalid"; icon=errorIcon; break;
             case "NOT_FOUND": msg = "CognativeX Meta Data Not Found"; icon=errorIcon; break;
         }
-        data = data?.data;
+        fields = data?.fields;
         return (
             <>
             <div className="statusDisplay">
@@ -30,28 +30,28 @@ const MetaDataChecker = () => {
                 <img className="statusIcon" src={icon}/>
             </div>
             {
-                data? (<div className='table'>
-                                <div className="row">
-                                    <div className="label">Type</div>
-                                    <div className="data-value">{data.postType}</div>
-                                </div>
-                                <hr />
-                                <div className="row">
-                                    <div className="label">Title</div>
-                                    <div className="data-value">{data.title}</div>
-                                </div>
-                                <hr />
-                                <div className="row">
-                                    <div className="label">Image</div>
-                                    <img className="data-value" src={data.thumb} alt="image of the post"/>
-                                </div>
-                                <hr />
-                                <div className="row">
-                                    <div className="label">Published Date</div>
-                                    <div className="data-value">{formatDate(data.datePublished)} (GMT)</div>
-                                </div>
-                            </div>)
-                        : ""
+                fields? (<div className='table'>
+                            <div className="row">
+                                <div className="label">Type</div>
+                                <div className="data-value">{fields.postType}</div>
+                            </div>
+                            <hr />
+                            <div className="row">
+                                <div className="label">Title</div>
+                                <div className="data-value">{fields.title}</div>
+                            </div>
+                            <hr />
+                            <div className="row">
+                                <div className="label">Image</div>
+                                <img className="data-value" src={fields.thumb} alt="image of the post"/>
+                            </div>
+                            <hr />
+                            <div className="row">
+                                <div className="label">Published Date</div>
+                                <div className="data-value">{formatDate(fields.datePublished)} (GMT)</div>
+                            </div>
+                        </div>)
+                    : ""
             }
             
             </>
