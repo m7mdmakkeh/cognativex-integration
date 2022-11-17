@@ -20,11 +20,10 @@ const MetaDataChecker = () => {
         switch (status){
             case "OK": msg = "Valid MetaData"; icon=check; break;
             case "ERROR": msg = data; icon=errorIcon; break;
-            case "MISTAKES": msg = "You have some mistakes in the JSON format"; icon=errorIcon; break;
+            case "MISTAKES": msg = "You have some mistakes in the metdata format"; icon=errorIcon; break;
         }
         const fields = data?.fieldsInfo;
         const errors = data?.errors;
-        console.log(data?.fieldsInfo)
         return (
             <>
             <div className="statusDisplay">
@@ -32,31 +31,29 @@ const MetaDataChecker = () => {
                 <img className="statusIcon" src={icon}/>
             </div>
             {
-                fields?.length && status==="OK" && (<div className='table'>
-                            <div className="row">
-                                <div className="label">Type</div>
-                                <div className="data-value">{fields.type || 'No Type'}</div>
-                            </div>
-                            <hr />
-                            <div className="row">
-                                <div className="label">Title</div>
-                                <div className="data-value">{fields.title || 'No Title'}</div>
-                            </div>
-                            <hr />
-                            <div className="row">
-                                <div className="label">Image</div>
-                                <img className="data-value" src={fields.thumbnail || 'No image'} alt="image of the post not"/>
-                            </div>
-                            <hr />
-                            <div className="row">
-                                <div className="label">Published Date</div>
-                                <div className="data-value">{formatDate(fields.published_time)} (GMT)</div>
-                            </div>
-                            
-                        </div>)
-            }
-            {
-                errors?.length && (
+                (fields && status === "OK") ? (<div className='table'>
+                    <div className="row">
+                        <div className="label">Type</div>
+                        <div className="data-value">{fields.type || 'No Type'}</div>
+                    </div>
+                    <hr />
+                    <div className="row">
+                        <div className="label">Title</div>
+                        <div className="data-value">{fields.title || 'No Title'}</div>
+                    </div>
+                    <hr />
+                    <div className="row">
+                        <div className="label">Image</div>
+                        <img className="data-value" src={fields.thumbnail || 'No image'} alt="image of the post not"/>
+                    </div>
+                    <hr />
+                    <div className="row">
+                        <div className="label">Published Date</div>
+                        <div className="data-value">{formatDate(fields.published_time)} (GMT)</div>
+                    </div>
+                    
+                </div>) : 
+                errors?.length ? (
                     <div className='error-container'>
                         {
                             errors.map(e => 
@@ -67,10 +64,8 @@ const MetaDataChecker = () => {
                                 <div className="error-item__solution">{e.solution}</div>
                             </div>)
                         }
-                        
                     </div>
-
-                )
+                ): ''
             }
             
             </>
