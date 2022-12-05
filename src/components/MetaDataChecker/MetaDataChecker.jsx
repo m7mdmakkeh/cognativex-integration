@@ -90,7 +90,7 @@ const MetaDataChecker = () => {
         }
         else{
             setIsChecking(true);
-            const res = await crawlJsonLd(url);
+            const res = await crawlJsonLd(encodeURIComponent(url));
             if (res && res.data) setUrlCrawledData(res.data);
             setIsChecking(false);
         }
