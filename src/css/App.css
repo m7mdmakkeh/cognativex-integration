@@ -30,3 +30,23 @@ section.container{
     justify-content: center;
     align-items: flex-start;
 }
+
+
+.unauthorized-message{
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1e2f;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+}
+.unauthorized-message h2{
+    font-weight: bold;
+    background: linear-gradient(to right, #e35840, #9209d2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent
+}
